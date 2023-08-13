@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ModLoader;
@@ -73,10 +74,10 @@ public class UISystem : ModSystem
         return true;
     }
 
-    public static void OpenZoneSelector(List<Zone> zones, Vector2 worldPosition)
+    public static void OpenZoneSelector(List<Zone> zones, Vector2 worldPosition, Action<Zone> onSelected)
     {
         ZoneSelectorUI.SetState(ZoneSelector);
-        ZoneSelector.Setup(zones, worldPosition);
+        ZoneSelector.Setup(zones, worldPosition, onSelected);
     }
 
     public static void CloseZoneSelector()

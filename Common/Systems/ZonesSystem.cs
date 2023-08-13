@@ -102,11 +102,23 @@ public class ZonesSystem : ModSystem
 
     public static void AddZoneNoSync(Zone zone)
     {
+        Point screenPos = Main.screenPosition.ToTileCoordinates();
+        Rectangle cullRect = new Rectangle(screenPos.X, screenPos.Y, Main.ScreenSize.X / 16 + 1, Main.ScreenSize.Y / 16 + 1);
+        
         Zones.Add(zone);
 
         RebuildAABB();
 
-        ZonesCulled.Add(zone);
+        if (zone.Rect.Intersects(cullRect))
+        {
+            zone.DisplayState ??= new ZoneDisplayState();
+            zone.DisplayState.InfoChanged(zone);
+            ZonesVisible.Add(zone);
+        }
+        else
+        {
+            ZonesCulled.Add(zone);
+        }
     }
 
     public static void RemoveZone(Zone zone)

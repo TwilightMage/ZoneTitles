@@ -41,31 +41,34 @@ public class ZoneDesignator : ModItem
         if (player.whoAmI == Main.myPlayer && Main.mouseLeft)
         {
             UISystem.CloseZoneSelector();
-            
-            if (Terraria.GameInput.PlayerInput.GetPressedKeys().Contains(Keys.LeftAlt))
-            {
-                Zone zone = ZonesSystem.GetZoneAtTile(Main.MouseWorld.ToTileCoordinates());
 
-                if (zone != null)
+            var action = (Zone zone) =>
+            {
+                if (Terraria.GameInput.PlayerInput.GetPressedKeys().Contains(Keys.LeftAlt))
                 {
                     ZonesSystem.RemoveZone(zone);
                 }
-            }
-            else
-            {
-                List<Zone> zones = ZonesSystem.GetZonesAtTile(Main.MouseWorld.ToTileCoordinates());
-
-                if (zones.Count > 0)
+                else
                 {
-                    if (zones.Count == 1)
+                    UISystem.OpenZoneEditor(zone);
+                }
+            };
+
+            List<Zone> zones = ZonesSystem.GetZonesAtTile(Main.MouseWorld.ToTileCoordinates());
+            
+            if (zones.Count > 0)
+            {
+                if (zones.Count == 1)
+                {
+                    action(zones[0]);
+                }
+                else
+                {
+                    zones.Sort((a, b) => b.Priority.CompareTo(a.Priority));
+                    UISystem.OpenZoneSelector(zones, Main.MouseWorld, (zone) =>
                     {
-                        UISystem.OpenZoneEditor(zones[0]);
-                    }
-                    else
-                    {
-                        zones.Sort((a, b) => b.Priority.CompareTo(a.Priority));
-                        UISystem.OpenZoneSelector(zones, Main.MouseWorld);
-                    }
+                        action(zone);
+                    });
                 }
             }
         }

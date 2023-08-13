@@ -58,7 +58,7 @@ public class MultiZoneSelector : UIState
         Clear();
     }
 
-    public void Setup(List<Zone> zones, Vector2 worldPosition)
+    public void Setup(List<Zone> zones, Vector2 worldPosition, Action<Zone> onSelected)
     {
         Clear();
 
@@ -73,8 +73,8 @@ public class MultiZoneSelector : UIState
             _options.Add((evt, elem) =>
             {
                 SoundEngine.PlaySound(SoundID.MenuTick);
-                UISystem.OpenZoneEditor(zones[j]);
                 UISystem.CloseZoneSelector();
+                onSelected?.Invoke(zones[j]);
             });
             _optionButtons.Add(button);
             
