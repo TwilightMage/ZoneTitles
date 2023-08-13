@@ -1,18 +1,5 @@
 Mods: {
 	ZoneTitles: {
-		Config: {
-			ItemHeader: Items
-			
-			SampleEnumLabels: {
-				Peculiar: Very Peculiar
-			}
-			
-			ExampleWingsToggle: {
-				Label: ExampleWings Toggle
-				Tooltip: Enables or disables the ExampleWings item
-			}
-		}
-
 		ItemName: {
 			ZoneDesignator: Zone Designator
 		}
