@@ -5,7 +5,7 @@
 ## Description
 
 An addon for [Biome Titles](https://github.com/MGTro/BTitles-1.4.3/tree/master) mod. Allows you to create zones where you can show your custom titles!
-<br>Let's say, you have a castle and you want a title with it's name appear when you enter this castle. With this mode you can!
+<br>Let's say, you have a castle and you want a title with it's name appear when you enter this castle. With this mod you can!
 
 First, create Zone Designator. No resources needed, only a workbench.
 

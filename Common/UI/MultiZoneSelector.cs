@@ -22,7 +22,6 @@ public class MultiZoneSelector : UIState
     private List<UIText> _optionButtons = new List<UIText>();
     private List<MouseEvent> _options = new List<MouseEvent>();
     private bool _justAppeared = false;
-    private Asset<Texture2D> _tileSelectTexture;
     private Pool<UIText> _pool = new Pool<UIText>(() =>
     {
         var item = new UIText("");
@@ -41,9 +40,7 @@ public class MultiZoneSelector : UIState
     public override void OnInitialize()
     {
         base.OnInitialize();
-
-        _tileSelectTexture = ModContent.Request<Texture2D>("ZoneTitles/Assets/Textures/UI/TileBorder", AssetRequestMode.ImmediateLoad);
-
+        
         _panel = new PanelWidget();
         _panel.SetPadding(0);
         Append(_panel);
@@ -137,7 +134,5 @@ public class MultiZoneSelector : UIState
         {
             UISystem.CloseZoneSelector();
         }
-
-        spriteBatch.Draw(_tileSelectTexture.Value, pos, _tileSelectTexture.Value.Bounds, Main.OurFavoriteColor, 0f, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
     }
 }

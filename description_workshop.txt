@@ -1,0 +1,27 @@
+﻿This mod is an addon for BiomeTitles [url]https://steamcommunity.com/sharedfiles/filedetails/?id=2992680615[/url]
+It allows you to designate titled areas on your own!
+
+Let's say, you have a castle and you want a title with it's name appear when you enter this castle. With this mod you can!
+First, create Zone Designator. No resources needed, only a workbench.
+[img]https://raw.githubusercontent.com/TwilightMage/ZoneTitles/master/RecipePicture.png[/img]
+It will allow you to create and edit zones.
+[table]
+  [tr]
+    [th]Control[/th]
+    [th]Action[/th]
+  [/tr]
+  [tr]
+    [td]LMB[/td]
+    [td]Edit zone under cursor[/td]
+  [/tr]
+  [tr]
+    [td]LMB + LAlt[/td]
+    [td]Remove zone under cursor[/td]
+  [/tr]
+  [tr]
+    [td]RMB[/td]
+    [td]Drag to create new zone[/td]
+  [/tr]
+[/table]
+
+[quote=tModLoader]Developed By Blooming Dragon[/quote]
