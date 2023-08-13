@@ -1,0 +1,7 @@
+author = Blooming Dragon
+version = 1.0.0
+displayName = Zone Titles
+homepage = discordapp.com/users/341065601625620481
+side = Both
+modReferences = BTitles
+sortBefore = BTitles

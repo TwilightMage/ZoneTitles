@@ -1,0 +1,81 @@
+Mods: {
+	ZoneTitles: {
+		Config: {
+			ItemHeader: Items
+			
+			SampleEnumLabels: {
+				Peculiar: Very Peculiar
+			}
+			
+			ExampleWingsToggle: {
+				Label: ExampleWings Toggle
+				Tooltip: Enables or disables the ExampleWings item
+			}
+		}
+
+		ItemName: {
+			ZoneDesignator: Zone Designator
+		}
+		
+		ItemTooltip: {
+			ZoneDesignator:
+			'''
+			Use this tool to designate zones!
+			LMB        - edit zone under cursor
+			LMB + LAlt - quick delete zone under cursor
+			RMB        - drag to designate new zone
+			'''
+		}
+		
+		UI: {
+			Editor: {
+				DragHint: Drag to resize
+			}
+			ZonePanel: {
+				PanelTitle: Edit "{0}"
+				TitleLabel: Title:
+				SubtitleLabel: Subtitle:
+				ColorLabel: Color:
+				StrokeLabel: Stroke:
+				IconLabel: Icon:
+				PriorityLabel: Priority:
+				Revert: Revert
+				Apply: Apply
+			}
+			ColorPanel: {
+			}
+			IconPicker: {
+				Title: Icon Picker
+				CategoryBestiary: Bestiary
+				CategoryItem: Item
+				CategoryMisc: Misc
+				CategoryWeb: URL
+				HelpBestiary: Icons from all bestoary filters.
+				HelpItem:
+                '''
+                Icon of any item. If item have animation, you will be able to pick specific frame of it. You can also click with item in mouse to use this item as icon.
+                Search can lookup by names and by ID. To search by ID use #123 format.
+				'''
+				HelpMisc: Uncategorized icons from terraria assets that were picked just because they were counted relevant.
+				HelpURL: (Almost) any icon from the internet.
+			}
+			ItemIconPicker: {
+				SearchBarPlaceholder: Filter:
+				FrameSelectorTitle: Pick frame
+			}
+			UrlIconProvider: {
+				Disabled: URL icons are disabled via client config
+				NotHttp: Not an http web resource
+				InvalidUrl: Invalid URL
+				TooBig: Size exceeds limit in config
+				SizeFetchFailed: Failed to fetch resource size
+				NotImage: Not an image
+				CreateTextureFailed: Failed to create texture
+				GenericError: Failed to get image
+			}
+			UrlIconPicker: {
+				PasteUrl: Download from URL in clipboard
+			}
+		}
+	}
+}
