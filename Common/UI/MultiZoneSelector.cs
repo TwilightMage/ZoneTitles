@@ -84,7 +84,7 @@ public class MultiZoneSelector : UIState
             button.Width.Set(0, 1);
             button.Height.Set(button.MinHeight.Pixels, 0);
             button.TextColor = zones[i].TitleColor;
-            button.OnClick += _options[i];
+            button.OnLeftClick += _options[i];
             _panel.Append(button);
 
             _panel.Width.Pixels = MathF.Max(_panel.Width.Pixels, 10 + button.MinWidth.Pixels + 10);
@@ -101,7 +101,7 @@ public class MultiZoneSelector : UIState
         for (int i = 0; i < _optionButtons.Count; i++)
         {
             _optionButtons[i].Remove();
-            _optionButtons[i].OnClick -= _options[i];
+            _optionButtons[i].OnLeftClick -= _options[i];
             
             _pool.Free(_optionButtons[i]);
         }

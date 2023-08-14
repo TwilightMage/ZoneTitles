@@ -47,7 +47,7 @@ public class NumberSpinner : Widget, IInputControl<int>
         lessButton.Height.Set(30, 0);
         lessButton.HAlign = 0;
         lessButton.SetPadding(0);
-        lessButton.OnClick += (evt, elem) =>
+        lessButton.OnLeftClick += (evt, elem) =>
         {
             Value--;
             ValueChanged();
@@ -59,7 +59,7 @@ public class NumberSpinner : Widget, IInputControl<int>
         moreButton.Height.Set(30, 0);
         moreButton.HAlign = 1;
         moreButton.SetPadding(0);
-        moreButton.OnClick += (evt, elem) =>
+        moreButton.OnLeftClick += (evt, elem) =>
         {
             Value++;
             ValueChanged();

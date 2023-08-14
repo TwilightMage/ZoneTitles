@@ -39,9 +39,9 @@ public class IconButton : UIElement
         _backgroundColor = Colors.InventoryDefaultColor;
     }
 
-    public override void MouseDown(UIMouseEvent evt)
+    public override void LeftMouseDown(UIMouseEvent evt)
     {
-        base.MouseDown(evt);
+        base.LeftMouseDown(evt);
         
         SoundEngine.PlaySound(SoundID.MenuTick);
     }

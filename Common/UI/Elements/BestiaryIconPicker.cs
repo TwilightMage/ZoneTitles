@@ -154,7 +154,7 @@ public class BestiaryIconPicker : IconPickerMenu
             iconButton.Icon = BestiaryIconProvider.CreateFromFilter(Main.BestiaryDB.Filters[i]);
             iconButton.Left.Set(CalculateXInGrid(i, NumColumns, 40, ColumnSpace), 0);
             iconButton.Top.Set(CalculateYInGrid(i, NumColumns, 40, ColumnSpace), 0);
-            iconButton.OnClick += IconClicked;
+            iconButton.OnLeftClick += IconClicked;
             Append(iconButton);
         }
     }

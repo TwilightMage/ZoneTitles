@@ -100,7 +100,7 @@ public class ColorPanel : Widget, IInputControl<Color>
         _copyButton.Height.Set(30, 0);
         _copyButton.SetPadding(0);
         //_copyButton.ToolTip = Localize("Copy").Value;
-        _copyButton.OnClick += (evt, elem) =>
+        _copyButton.OnLeftClick += (evt, elem) =>
         {
             Platform.Get<IClipboard>().Value = _hexCodeDisplay.Text;
         };
@@ -113,7 +113,7 @@ public class ColorPanel : Widget, IInputControl<Color>
         _pasteButton.Height.Set(30, 0);
         _pasteButton.SetPadding(0);
         //_pasteButton.ToolTip = Localize("Paste").Value;
-        _pasteButton.OnClick += (evt, elem) =>
+        _pasteButton.OnLeftClick += (evt, elem) =>
         {
             var hash = Platform.Get<IClipboard>().Value;
             if (Regex.IsMatch(hash, "#?[0-9a-fA-F]{6}"))

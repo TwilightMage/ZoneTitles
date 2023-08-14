@@ -89,7 +89,7 @@ public class ZonePanel : View
         {
             SoundEngine.PlaySound(SoundID.MenuTick);
         };
-        _closeButton.OnClick += (evt, elem) =>
+        _closeButton.OnLeftClick += (evt, elem) =>
         {
             Close();
         };
@@ -111,7 +111,7 @@ public class ZonePanel : View
         _titleInput.Top.Set(y, 0);
         _titleInput.TextHAlign = 0;
         _titleInput.SetTextMaxLength(40);
-        _titleInput.OnClick += (evt, elem) => _titleInput.SetWritingText(true);
+        _titleInput.OnLeftClick += (evt, elem) => _titleInput.SetWritingText(true);
         _titleInput.OnRightClick += (evt, elem) =>
         {
             _titleInput.SetText("");
@@ -140,7 +140,7 @@ public class ZonePanel : View
         _subtitleInput.Top.Set(y, 0);
         _subtitleInput.TextHAlign = 0;
         _subtitleInput.SetTextMaxLength(40);
-        _subtitleInput.OnClick += (evt, elem) => _subtitleInput.SetWritingText(true);
+        _subtitleInput.OnLeftClick += (evt, elem) => _subtitleInput.SetWritingText(true);
         _subtitleInput.OnRightClick += (evt, elem) =>
         {
             _subtitleInput.SetText("");
@@ -198,7 +198,7 @@ public class ZonePanel : View
         _iconInput = new IconButton();
         _iconInput.Left.Set(maxLabelWidth + offset, 0);
         _iconInput.Top.Set(y, 0);
-        _iconInput.OnClick += (evt, elem) =>
+        _iconInput.OnLeftClick += (evt, elem) =>
         {
             if (!(Main.mouseItem?.IsAir ?? true))
             {
@@ -238,14 +238,14 @@ public class ZonePanel : View
         _cancelButton = new IconTextButton(Localize("Revert"));
         _cancelButton.Width.Set(-5, 0.5f);
         _cancelButton.Top.Set(y, 0);
-        _cancelButton.OnClick += (evt, elem) => Revert();
+        _cancelButton.OnLeftClick += (evt, elem) => Revert();
         Append(_cancelButton);
         
         _confirmButton = new IconTextButton(Localize("Apply"));
         _confirmButton.Width.Set(-5, 0.5f);
         _confirmButton.Top.Set(y, 0);
         _confirmButton.HAlign = 1;
-        _confirmButton.OnClick += (evt, elem) => Apply();
+        _confirmButton.OnLeftClick += (evt, elem) => Apply();
         Append(_confirmButton);
 
         y += 38 + offset;

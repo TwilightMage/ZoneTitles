@@ -226,11 +226,11 @@ public class ItemIconPicker : IconPickerMenu
         _searchPanel.BackgroundColor = new Color(35, 40, 83);
         _searchPanel.BorderColor = new Color(35, 40, 83);
         _searchPanel.SetPadding(0.0f);
-        _searchPanel.OnMouseDown += (evt, elem) =>
+        _searchPanel.OnLeftMouseDown += (evt, elem) =>
         {
             _justSearchMouseLeftDown = true;
         };
-        _searchPanel.OnClick += (evt, elem) =>
+        _searchPanel.OnLeftClick += (evt, elem) =>
         {
             if (!_searchBar.IsWritingText)
             {
@@ -288,7 +288,7 @@ public class ItemIconPicker : IconPickerMenu
             };
             IngameFancyUI.OpenUIState(uiVirtualKeyboard);
         };
-        _searchBar.OnCancledTakingInput += () => _searchPanel.BorderColor = new Color(35, 40, 83);
+        _searchBar.OnCanceledTakingInput += () => _searchPanel.BorderColor = new Color(35, 40, 83);
         _searchPanel.Append(_searchBar);
 
         UIImageButton search_cancel = new UIImageButton(Main.Assets.Request<Texture2D>("Images/UI/SearchCancel", AssetRequestMode.ImmediateLoad));
@@ -300,7 +300,7 @@ public class ItemIconPicker : IconPickerMenu
         {
             SoundEngine.PlaySound(SoundID.MenuTick);
         };
-        search_cancel.OnClick += (evt, elem) =>
+        search_cancel.OnLeftClick += (evt, elem) =>
         {
             if (_searchBar.HasContents)
             {
@@ -335,7 +335,7 @@ public class ItemIconPicker : IconPickerMenu
             _iconButtonPool[i].Icon = ItemIconProvider.CreateTransient();
             _iconButtonPool[i].Left.Set(CalculateXInGrid(i, NumColumns, 40, ColumnSpace), 0);
             _iconButtonPool[i].Top.Set(CalculateYInGrid(i, NumColumns, 40, ColumnSpace), 0);
-            _iconButtonPool[i].OnClick += IconClicked;
+            _iconButtonPool[i].OnLeftClick += IconClicked;
         }
 
         _scrollbar = new UIScrollbar();
@@ -370,7 +370,7 @@ public class ItemIconPicker : IconPickerMenu
         button.Left.Set(CalculateXInGrid(frame, int.MaxValue, 40, ColumnSpace), 0);
         button.Top.Set(20 + 10, 0);
         button.Icon = icon;
-        button.OnClick += SelectorFrameClicked;
+        button.OnLeftClick += SelectorFrameClicked;
         _frameSelector.Append(button);
 
         _frameButtons.Add(button);
@@ -382,7 +382,7 @@ public class ItemIconPicker : IconPickerMenu
         {
             button.Remove();
             button.Icon = null;
-            button.OnClick -= SelectorFrameClicked;
+            button.OnLeftClick -= SelectorFrameClicked;
 
             _frameButtonsPool.Free(button);
         }

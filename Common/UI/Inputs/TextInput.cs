@@ -34,9 +34,9 @@ public class TextInput : UITextBox, IInputControl<string>
         ShowInputTicker = false;
     }
 
-    public override void MouseDown(UIMouseEvent evt)
+    public override void LeftMouseDown(UIMouseEvent evt)
     {
-        base.MouseDown(evt);
+        base.LeftMouseDown(evt);
         
         _justMouseLeftDown = true;
     }

@@ -1,6 +1,6 @@
 author = Blooming Dragon
-version = 1.0.0
-displayName = Zone Titles
+version = 2.0.0
+displayName = Custom Zone Titles
 homepage = https://github.com/TwilightMage/ZoneTitles
 side = Both
 modReferences = BTitles

@@ -1,23 +1,47 @@
 Mods: {
 	ZoneTitles: {
-		ItemName: {
-			ZoneDesignator: Определитель областей
-		}
-		
-		ItemTooltip: {
-			ZoneDesignator:
-			'''
-			Используйте этот инструмент чтобы выделять области!
-			ЛКМ        - изменить область под курсором
-			ЛКМ + LAlt - быстро удалить область под курсором
-			ПКМ        - тяните чтобы создать новую область
-			'''
-		}
-		
-		UI: {
-			Editor: {
-				DragHint: Изменить размер
+		Configs: {
+			ClientConfig: {
+				// Headers.IconsHeader: "[i:4723] Icons"
+
+				AllowURLIcons: {
+					// Label: Allow URL Icons
+					// Tooltip: ""
+				}
+
+				LimitURLIconsSize: {
+					// Label: Limit URL Icons Size
+					// Tooltip: ""
+				}
+
+				URLIconSizeLimitKB: {
+					// Label: URL Icon Size Limit (KB)
+					// Tooltip: ""
+				}
+
+				// ReloadAllURLIcons: Reload all URL icons
+				// DisplayName: Client Config
 			}
+
+			// WorldConfig.DisplayName: World Config
+		}
+
+		Items: {
+			ZoneDesignator: {
+				// DisplayName: Zone Designator
+				/* Tooltip:
+					'''
+					Use this tool to designate zones!
+					LMB        - edit zone under cursor
+					LMB + LAlt - quick delete zone under cursor
+					RMB        - drag to designate new zone
+					''' */
+			}
+		}
+
+		UI: {
+			Editor.DragHint: Изменить размер
+
 			ZonePanel: {
 				PanelTitle: Изменить "{0}"
 				TitleLabel: Имя:
@@ -29,8 +53,10 @@ Mods: {
 				Revert: Откатить
 				Apply: Применить
 			}
+
 			ColorPanel: {
 			}
+
 			IconPicker: {
 				Title: Выбор Иконки
 				CategoryBestiary: Бестиарий
@@ -39,17 +65,19 @@ Mods: {
 				CategoryWeb: URL
 				HelpBestiary: Иконки всех фильтров бестиария.
 				HelpItem:
-                '''
-                Иконка любого предмета. Если у предмета есть анимация, вы сможете выбрать конкрретный кадр этой анимации. Вы так же можете кликнуть по слоту держа в мыши предмет чтобы использовать его как иконку.
-                Поиск может выполняться по имени и по ID предмета. Для поиска по ID используйте формат #123.
-				'''
-                HelpMisc: Разные иконки из ассетов террарии которые были посчитаны релевантными.
+					'''
+					Иконка любого предмета. Если у предмета есть анимация, вы сможете выбрать конкрретный кадр этой анимации. Вы так же можете кликнуть по слоту держа в мыши предмет чтобы использовать его как иконку.
+					Поиск может выполняться по имени и по ID предмета. Для поиска по ID используйте формат #123.
+					'''
+				HelpMisc: Разные иконки из ассетов террарии которые были посчитаны релевантными.
 				HelpURL: (Почти) любая иконка из интернета.
 			}
+
 			ItemIconPicker: {
 				SearchBarPlaceholder: Фильтр:
 				FrameSelectorTitle: Выберите кадр
 			}
+
 			UrlIconProvider: {
 				Disabled: URL иконки отключены в конфиге клиента
 				NotHttp: Не является HTTP ресурсом
@@ -60,9 +88,10 @@ Mods: {
 				CreateTextureFailed: Не удалось создатть текстуру
 				GenericError: не удалось получить изображение
 			}
-			UrlIconPicker: {
-				PasteUrl: Скачать из URL в буфере обмена
-			}
+
+			UrlIconPicker.PasteUrl: Скачать из URL в буфере обмена
 		}
+
+		// "Keybinds.Random Buff.DisplayName": Random  Buff
 	}
 }

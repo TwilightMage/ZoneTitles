@@ -26,7 +26,7 @@ public class ZonesSystem : ModSystem
         Bottom = 8
     }
 
-    public static List<Zone> Zones;
+    public static List<Zone> Zones = new List<Zone>();
     private static AABB _rootAABB;
 
     public static List<Zone> ZonesVisible = new List<Zone>();

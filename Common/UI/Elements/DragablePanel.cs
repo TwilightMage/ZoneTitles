@@ -10,18 +10,18 @@ public class DragablePanel : PanelWidget
     private Vector2 offset;
     public bool dragging;
 
-    public override void MouseDown(UIMouseEvent evt)
+    public override void LeftMouseDown(UIMouseEvent evt)
     {
-        base.MouseDown(evt);
+        base.LeftMouseDown(evt);
         if (TestSelfClicked(evt))
         {
             DragStart(evt);
         }
     }
 
-    public override void MouseUp(UIMouseEvent evt)
+    public override void LeftMouseUp(UIMouseEvent evt)
     {
-        base.MouseUp(evt);
+        base.LeftMouseUp(evt);
         DragEnd(evt);
     }
 

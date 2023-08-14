@@ -335,13 +335,13 @@ public class UrlIconPicker : IconPickerMenu
         var pasteButton = new IconTextButton(pasteLabel, contentAlignmentX: 0.5f);
         pasteButton.Width.Set(FontAssets.MouseText.Value.MeasureString(pasteLabel.Value).X + 20, 0);
         pasteButton.HAlign = 0.5f;
-        pasteButton.OnClick += PasteClicked;
+        pasteButton.OnLeftClick += PasteClicked;
         Append(pasteButton);
 
         _iconButton = new IconButton();
         _iconButton.Top.Set(37 + 10, 0);
         _iconButton.HAlign = 0.5f;
-        _iconButton.OnClick += (evt, elem) =>
+        _iconButton.OnLeftClick += (evt, elem) =>
         {
             SelectIcon(_iconButton.Icon);
         };
@@ -362,7 +362,7 @@ public class UrlIconPicker : IconPickerMenu
             iconButton.Icon = UrlIconProvider.GetRecent(i);
             iconButton.Left.Set(CalculateXInGrid(i, NumColumns, 40, ColumnSpace), 0);
             iconButton.Top.Set(37 + 10 + 40 + 10 + 30 + 10 + CalculateYInGrid(i, NumColumns, 40, ColumnSpace), 0);
-            iconButton.OnClick += IconClicked;
+            iconButton.OnLeftClick += IconClicked;
             Append(iconButton);
         }
 
@@ -402,7 +402,7 @@ public class UrlIconPicker : IconPickerMenu
         iconButton.Icon = added;
         iconButton.Left.Set(CalculateXInGrid(_recentList.Count, NumColumns, 40, ColumnSpace), 0);
         iconButton.Top.Set(37 + 10 + 40 + 10 + 30 + 10 + CalculateYInGrid(_recentList.Count, NumColumns, 40, ColumnSpace), 0);
-        iconButton.OnClick += IconClicked;
+        iconButton.OnLeftClick += IconClicked;
         Append(iconButton);
         _recentList.Add(iconButton);
         

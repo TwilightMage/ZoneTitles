@@ -125,10 +125,10 @@ public class OptionButton<T> : Widget, IGroupOptionButton
         spriteBatch.Draw(this._iconTexture.Value, new Vector2(dimensions.X + 16 - _iconTexture.Value.Width / 2f , dimensions.Y + (dimensions.Height - _iconTexture.Value.Height) / 2), color2);
     }
 
-    public override void MouseDown(UIMouseEvent evt)
+    public override void LeftMouseDown(UIMouseEvent evt)
     {
         SoundEngine.PlaySound(SoundID.MenuTick);
-        base.MouseDown(evt);
+        base.LeftMouseDown(evt);
     }
 
     public override void MouseOver(UIMouseEvent evt)

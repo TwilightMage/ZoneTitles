@@ -110,9 +110,9 @@ public class ColoredSlider : ControlWidget, IInputControl<float>
         }
     }
 
-    public override void MouseDown(UIMouseEvent evt)
+    public override void LeftMouseDown(UIMouseEvent evt)
     {
-        base.MouseDown(evt);
+        base.LeftMouseDown(evt);
 
         _dragging = true;
     }

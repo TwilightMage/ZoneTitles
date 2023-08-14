@@ -1,23 +1,47 @@
 Mods: {
 	ZoneTitles: {
-		ItemName: {
-			ZoneDesignator: Zone Designator
-		}
-		
-		ItemTooltip: {
-			ZoneDesignator:
-			'''
-			Use this tool to designate zones!
-			LMB        - edit zone under cursor
-			LMB + LAlt - quick delete zone under cursor
-			RMB        - drag to designate new zone
-			'''
-		}
-		
-		UI: {
-			Editor: {
-				DragHint: Drag to resize
+		Configs: {
+			ClientConfig: {
+				Headers.IconsHeader: "[i:4723] Icons"
+
+				AllowURLIcons: {
+					Label: Allow URL Icons
+					Tooltip: ""
+				}
+
+				LimitURLIconsSize: {
+					Label: Limit URL Icons Size
+					Tooltip: ""
+				}
+
+				URLIconSizeLimitKB: {
+					Label: URL Icon Size Limit (KB)
+					Tooltip: ""
+				}
+
+				ReloadAllURLIcons: Reload all URL icons
+				DisplayName: Client Config
 			}
+
+			WorldConfig.DisplayName: World Config
+		}
+
+		Items: {
+			ZoneDesignator: {
+				DisplayName: Zone Designator
+				Tooltip:
+					'''
+					Use this tool to designate zones!
+					LMB        - edit zone under cursor
+					LMB + LAlt - quick delete zone under cursor
+					RMB        - drag to designate new zone
+					'''
+			}
+		}
+
+		UI: {
+			Editor.DragHint: Drag to resize
+
 			ZonePanel: {
 				PanelTitle: Edit "{0}"
 				TitleLabel: Title:
@@ -29,8 +53,10 @@ Mods: {
 				Revert: Revert
 				Apply: Apply
 			}
+
 			ColorPanel: {
 			}
+
 			IconPicker: {
 				Title: Icon Picker
 				CategoryBestiary: Bestiary
@@ -39,17 +65,19 @@ Mods: {
 				CategoryWeb: URL
 				HelpBestiary: Icons from all bestoary filters.
 				HelpItem:
-                '''
-                Icon of any item. If item have animation, you will be able to pick specific frame of it. You can also click with item in mouse to use this item as icon.
-                Search can lookup by names and by ID. To search by ID use #123 format.
-				'''
+					'''
+					Icon of any item. If item have animation, you will be able to pick specific frame of it. You can also click with item in mouse to use this item as icon.
+					Search can lookup by names and by ID. To search by ID use #123 format.
+					'''
 				HelpMisc: Uncategorized icons from terraria assets that were picked just because they were counted relevant.
 				HelpURL: (Almost) any icon from the internet.
 			}
+
 			ItemIconPicker: {
 				SearchBarPlaceholder: Filter:
 				FrameSelectorTitle: Pick frame
 			}
+
 			UrlIconProvider: {
 				Disabled: URL icons are disabled via client config
 				NotHttp: Not an http web resource
@@ -60,9 +88,10 @@ Mods: {
 				CreateTextureFailed: Failed to create texture
 				GenericError: Failed to get image
 			}
-			UrlIconPicker: {
-				PasteUrl: Download from URL in clipboard
-			}
+
+			UrlIconPicker.PasteUrl: Download from URL in clipboard
 		}
+
+		"Keybinds.Random Buff.DisplayName": Random  Buff
 	}
 }

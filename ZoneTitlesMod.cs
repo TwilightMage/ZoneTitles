@@ -19,14 +19,14 @@ public partial class ZoneTitlesMod : Mod
     {
         Instance = this;
 
-        On.Terraria.Player.ToggleInv += ToggleInv;
+        On_Player.ToggleInv += ToggleInv;
     }
 
     public override void Unload()
     {
         Instance = null;
             
-        On.Terraria.Player.ToggleInv -= ToggleInv;
+        On_Player.ToggleInv -= ToggleInv;
     }
 
     public string BTitlesHook_DynamicBiomeChecker(Player player)
@@ -39,7 +39,7 @@ public partial class ZoneTitlesMod : Mod
         return ZonesSystem.Zones.FirstOrDefault(zone => zone.ZoneId == key);
     }
 
-    private void ToggleInv(On.Terraria.Player.orig_ToggleInv orig, Terraria.Player self)
+    private void ToggleInv(On_Player.orig_ToggleInv orig, Terraria.Player self)
     {
         if (UISystem.Visible)
         {

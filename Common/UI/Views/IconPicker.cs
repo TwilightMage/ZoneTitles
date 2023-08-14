@@ -103,7 +103,7 @@ public class IconPicker : View
         {
             SoundEngine.PlaySound(SoundID.MenuTick);
         };
-        _closeButton.OnClick += (evt, elem) =>
+        _closeButton.OnLeftClick += (evt, elem) =>
         {
             Close();
         };
@@ -145,28 +145,28 @@ public class IconPicker : View
         _menuButtons[0].Top.Set(y, 0);
         _menuButtons[0].Width.Set(-5, 0.25f);
         _menuButtons[0].HAlign = 1f / 3 * 0;
-        _menuButtons[0].OnClick += (evt, elem) => SelectCategory(0);
+        _menuButtons[0].OnLeftClick += (evt, elem) => SelectCategory(0);
         Append(_menuButtons[0]);
         
         _menuButtons[1] = new OptionButton<int>(1, Localize("CategoryItem"), LocalizedText.Empty, Color.White, "Images/Item_9");
         _menuButtons[1].Top.Set(y, 0);
         _menuButtons[1].Width.Set(-5, 0.25f);
         _menuButtons[1].HAlign = 1f / 3 * 1;
-        _menuButtons[1].OnClick += (evt, elem) => SelectCategory(1);
+        _menuButtons[1].OnLeftClick += (evt, elem) => SelectCategory(1);
         Append(_menuButtons[1]);
         
         _menuButtons[2] = new OptionButton<int>(2, Localize("CategoryMisc"), LocalizedText.Empty, Color.White, "Images/UI/Bestiary/Icon_Rank_Light");
         _menuButtons[2].Top.Set(y, 0);
         _menuButtons[2].Width.Set(-5, 0.25f);
         _menuButtons[2].HAlign = 1f / 3 * 2;
-        _menuButtons[2].OnClick += (evt, elem) => SelectCategory(2);
+        _menuButtons[2].OnLeftClick += (evt, elem) => SelectCategory(2);
         Append(_menuButtons[2]);
         
         _menuButtons[3] = new OptionButton<int>(3, Localize("CategoryWeb"), LocalizedText.Empty, Color.White, "Images/UI/Workshop/PublicityPublic");
         _menuButtons[3].Top.Set(y, 0);
         _menuButtons[3].Width.Set(-5, 0.25f);
         _menuButtons[3].HAlign = 1f / 3 * 3;
-        _menuButtons[3].OnClick += (evt, elem) => SelectCategory(3);
+        _menuButtons[3].OnLeftClick += (evt, elem) => SelectCategory(3);
         Append(_menuButtons[3]);
 
         y += 37 + 20;
