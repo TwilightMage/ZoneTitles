@@ -2,25 +2,25 @@ Mods: {
 	ZoneTitles: {
 		Configs: {
 			ClientConfig: {
-				// Headers.IconsHeader: "[i:4723] Icons"
+				Headers.IconsHeader: "[i:4723] Icons"
 
 				AllowURLIcons: {
-					// Label: Allow URL Icons
-					// Tooltip: ""
+					Label: Разрешить URL иконки
+					Tooltip: Все последующие загрузки иконок будут автоматически остановлены
 				}
 
 				LimitURLIconsSize: {
-					// Label: Limit URL Icons Size
-					// Tooltip: ""
+					Label: Ограничивать размер URL иконок
+					Tooltip: Все последующие иконки не будут загружены, если окажутся слишком большими
 				}
 
 				URLIconSizeLimitKB: {
-					// Label: URL Icon Size Limit (KB)
-					// Tooltip: ""
+					Label: Лимит размера URL иконки (KB)
+					Tooltip: Размер в килобайтах (1024 килобайт = 1 мегабайт)
 				}
 
-				// ReloadAllURLIcons: Reload all URL icons
-				// DisplayName: Client Config
+				ReloadAllURLIcons: Обновить все URL иконки
+				DisplayName: Конфиг Клиента
 			}
 
 			// WorldConfig.DisplayName: World Config
@@ -28,14 +28,14 @@ Mods: {
 
 		Items: {
 			ZoneDesignator: {
-				// DisplayName: Zone Designator
-				/* Tooltip:
+				DisplayName: Определитель Областей
+				Tooltip:
 					'''
-					Use this tool to designate zones!
-					LMB        - edit zone under cursor
-					LMB + LAlt - quick delete zone under cursor
-					RMB        - drag to designate new zone
-					''' */
+					Используйте этот инструмент для определения областей!
+					ЛКМ        - Изменить область под курсором
+					ЛКМ + LAlt - Удалить область под курсором
+					ПКМ        - Тяните чтобы создать новую область
+					'''
 			}
 		}
 
