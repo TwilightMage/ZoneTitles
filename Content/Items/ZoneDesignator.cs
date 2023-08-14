@@ -20,7 +20,7 @@ public class ZoneDesignator : ModItem
         Item.useTurn = true;
         Item.useStyle = ItemUseStyleID.Swing;
         Item.UseSound = SoundID.Item1;
-        Item.useTime = 0;
+        Item.useTime = 1;
     }
 
     public override void HoldItem(Player player)

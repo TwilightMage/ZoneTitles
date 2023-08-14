@@ -30,7 +30,6 @@ public class ZonesSystem : ModSystem
     private static AABB _rootAABB;
 
     public static List<Zone> ZonesVisible = new List<Zone>();
-    public static List<Zone> ZonesCulled = new List<Zone>();
     private static List<Zone> ZonesTrashed = new List<Zone>();
 
     private static LocalizedText _dragHintText = null;
@@ -69,24 +68,23 @@ public class ZonesSystem : ModSystem
 
     private static AABB BuildAABB(List<Zone> zones)
     {
-        if (zones.Count == 0)
-        {
-            return null;
-        }
+        if (zones == null) return null;
 
         zones.Sort((a, b) => a.Rect.Center.X.CompareTo(b.Rect.Center.X));
+        
+        return BuildAABBSegment(zones, 0, zones.Count);
+    }
+    
+    private static AABB BuildAABBSegment(List<Zone> zones, int segmentStart, int segmentSize)
+    {
+        if (segmentSize == 0) return null;
 
-        if (zones.Count == 1)
-        {
-            return new AABB { Rect = zones[0].Rect, Zone = zones[0] };
-        }
+        if (segmentSize == 1) return new AABB { Rect = zones[segmentStart].Rect, Zone = zones[segmentStart] };
 
-        int mid = zones.Count / 2;
-        List<Zone> leftZones = zones.GetRange(0, mid);
-        List<Zone> rightZones = zones.GetRange(mid, zones.Count - mid);
+        int leftSize = segmentSize / 2;
 
-        AABB left = BuildAABB(leftZones);
-        AABB right = BuildAABB(rightZones);
+        AABB left = BuildAABBSegment(Zones, segmentStart, leftSize);
+        AABB right = BuildAABBSegment(Zones, segmentStart + leftSize, segmentSize - leftSize);
 
         Rectangle bounds = Rectangle.Union(left.Rect, right.Rect);
 
@@ -102,22 +100,15 @@ public class ZonesSystem : ModSystem
 
     public static void AddZoneNoSync(Zone zone)
     {
-        Point screenPos = Main.screenPosition.ToTileCoordinates();
-        Rectangle cullRect = new Rectangle(screenPos.X, screenPos.Y, Main.ScreenSize.X / 16 + 1, Main.ScreenSize.Y / 16 + 1);
-        
         Zones.Add(zone);
 
         RebuildAABB();
 
-        if (zone.Rect.Intersects(cullRect))
+        if (zone.Rect.Intersects(GetCullRect()))
         {
             zone.DisplayState ??= new ZoneDisplayState();
             zone.DisplayState.InfoChanged(zone);
             ZonesVisible.Add(zone);
-        }
-        else
-        {
-            ZonesCulled.Add(zone);
         }
     }
 
@@ -209,7 +200,6 @@ public class ZonesSystem : ModSystem
         }
 
         Zones = newZones;
-        ZonesCulled = new List<Zone>(newZones);
 
         RebuildAABB();
     }
@@ -334,7 +324,6 @@ public class ZonesSystem : ModSystem
             {
                 Zones.Remove(zone);
                 ZonesVisible.Remove(zone);
-                ZonesCulled.Remove(zone);
             }
 
             ZonesTrashed.Clear();
@@ -434,8 +423,7 @@ public class ZonesSystem : ModSystem
 
     private void UpdateCulling()
     {
-        Point screenPos = Main.screenPosition.ToTileCoordinates();
-        Rectangle cullRect = new Rectangle(screenPos.X, screenPos.Y, Main.ScreenSize.X / 16 + 1, Main.ScreenSize.Y / 16 + 1);
+        Rectangle cullRect = GetCullRect();
 
         if (_rootAABB != null)
         {
@@ -451,9 +439,8 @@ public class ZonesSystem : ModSystem
                         if (aabb.Zone.DisplayState == null)
                         {
                             // culled to visible
-                            ZonesCulled.Remove(aabb.Zone);
                             ZonesVisible.Add(aabb.Zone);
-                            aabb.Zone.DisplayState ??= new ZoneDisplayState();
+                            aabb.Zone.DisplayState = new ZoneDisplayState();
                             aabb.Zone.DisplayState.InfoChanged(aabb.Zone);
                         }
                         else
@@ -470,7 +457,6 @@ public class ZonesSystem : ModSystem
                         else
                         {
                             // visible to culled
-                            ZonesCulled.Add(aabb.Zone);
                             ZonesVisible.Remove(aabb.Zone);
                             aabb.Zone.DisplayState = null;
                         }
@@ -487,6 +473,12 @@ public class ZonesSystem : ModSystem
         {
             ZonesVisible.Clear();
         }
+    }
+
+    private static Rectangle GetCullRect()
+    {
+        Point screenPos = Main.screenPosition.ToTileCoordinates();
+        return new Rectangle(screenPos.X, screenPos.Y, Main.ScreenSize.X / 16 + 1, Main.ScreenSize.Y / 16 + 1);
     }
 
     public override void UpdateUI(GameTime gameTime)
