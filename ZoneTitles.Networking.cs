@@ -17,7 +17,7 @@ namespace ZoneTitles
             RemoveZone
         }
 
-        public override void HandlePacket(BinaryReader reader, int whoAmI)
+        public override void HandlePacket(BinaryReader reader, int sender)
         {
             MessageType msgType = (MessageType)reader.ReadByte();
 
@@ -44,7 +44,7 @@ namespace ZoneTitles
 
                     if (Main.netMode == NetmodeID.Server)
                     {
-                        zone.SendAddOrUpdate(-1, whoAmI);
+                        zone.SendAddOrUpdate(-1, sender);
                     }
                 }
                     break;
@@ -60,7 +60,7 @@ namespace ZoneTitles
                         
                         if (Main.netMode == NetmodeID.Server)
                         {
-                            zone.SendRect(-1, whoAmI);
+                            zone.SendRect(-1, sender);
                         }
                     }
                 }
@@ -75,7 +75,7 @@ namespace ZoneTitles
                         
                         if (Main.netMode == NetmodeID.Server)
                         {
-                            zone.SendVisualData(-1, whoAmI);
+                            zone.SendVisualData(-1, sender);
                         }
                     }
                 }
@@ -88,7 +88,7 @@ namespace ZoneTitles
                     {
                         if (Main.netMode == NetmodeID.Server)
                         {
-                            zone.SendRemove(-1, whoAmI);
+                            zone.SendRemove(-1, sender);
                         }
                         
                         ZonesSystem.RemoveZoneNoSync(zone);

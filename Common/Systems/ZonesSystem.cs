@@ -147,18 +147,25 @@ public class ZonesSystem : ModSystem
 
     public override void OnModLoad()
     {
-        DashHor = ModContent.Request<Texture2D>("ZoneTitles/Assets/Textures/UI/ZoneBorderHor", AssetRequestMode.ImmediateLoad).Value;
-        DashVer = ModContent.Request<Texture2D>("ZoneTitles/Assets/Textures/UI/ZoneBorderVer", AssetRequestMode.ImmediateLoad).Value;
-        Dot = ModContent.Request<Texture2D>("ZoneTitles/Assets/Textures/UI/ZoneBorderAngle", AssetRequestMode.ImmediateLoad).Value;
-        Font = FontAssets.MouseText.Value;
+        if (Main.netMode != NetmodeID.Server)
+        {
+            DashHor = ModContent.Request<Texture2D>("ZoneTitles/Assets/Textures/UI/ZoneBorderHor", AssetRequestMode.ImmediateLoad).Value;
+            DashVer = ModContent.Request<Texture2D>("ZoneTitles/Assets/Textures/UI/ZoneBorderVer", AssetRequestMode.ImmediateLoad).Value;
+            Dot = ModContent.Request<Texture2D>("ZoneTitles/Assets/Textures/UI/ZoneBorderAngle", AssetRequestMode.ImmediateLoad).Value;
+            Font = FontAssets.MouseText.Value;
+        }
     }
 
     public override void OnModUnload()
     {
-        DashHor = null;
-        DashVer = null;
-        Dot = null;
-        Font = null;
+        if (Main.netMode != NetmodeID.Server)
+        {
+
+            DashHor = null;
+            DashVer = null;
+            Dot = null;
+            Font = null;
+        }
     }
 
     public override void OnWorldLoad()
@@ -211,7 +218,7 @@ public class ZonesSystem : ModSystem
 
     public override void NetReceive(BinaryReader reader)
     {
-        int zoneCount = reader.Read();
+        int zoneCount = reader.ReadInt32();
 
         for (int i = 0; i < zoneCount; i++)
         {
@@ -331,7 +338,7 @@ public class ZonesSystem : ModSystem
             RebuildAABB();
         }
 
-        if (EnableEdit)
+        if (EnableEdit && Main.netMode != NetmodeID.Server)
         {
             Point mousePosTile = Main.MouseWorld.ToTileCoordinates();
             float borderWidth = 4 * Main.GameZoomTarget;

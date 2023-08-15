@@ -213,6 +213,8 @@ public class Zone
         }
     }
 
+    public void SetRectSilent(Rectangle rect) => _rect = rect;
+
     public static string LocalizeError(string error) => Language.GetTextValue($"Mods.ZoneTitles.ZoneError.{error}");
 
     public void Save(TagCompound tag)
@@ -238,7 +240,7 @@ public class Zone
     {
         Id = tag.Get<long>("id");
         ZoneId = $"zone_{Id}";
-        Rect = tag.Get<Rectangle>("rect");
+        _rect = tag.Get<Rectangle>("rect");
         OwnerName = tag.Get<string>("owner");
         Priority = tag.Get<int>("priority");
         Title = tag.Get<string>("title");
@@ -294,7 +296,6 @@ public class Zone
         ModPacket packet = ZoneTitlesMod.Instance.GetPacket();
         packet.Write((byte)ZoneTitlesMod.MessageType.RemoveZone);
         packet.Write(Id);
-        SaveBinaryVisual(packet);
         packet.Send(to, skip);
     }
 
@@ -321,19 +322,17 @@ public class Zone
         {
             writer.Write(false);
         }
-        
-        writer.Write(Priority);
     }
 
     public void LoadBinaryRect(BinaryReader reader)
     {
-        Rect = reader.ReadRect();
+        _rect = reader.ReadRect();
     }
 
     public void LoadBinaryVisual(BinaryReader reader)
     {
         OwnerName = reader.ReadString();
-        Priority = reader.Read();
+        Priority = reader.ReadInt32();
         Title = reader.ReadString();
         SubTitle = reader.ReadString();
         TitleColor = reader.ReadRGB();
@@ -343,8 +342,6 @@ public class Zone
         {
             IconProvider = IconSystem.IconProvider.CreateFromBinary(reader);
         }
-
-        Priority = reader.Read();
     }
 
     public IEnumerable<string> CheckErrors()

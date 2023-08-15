@@ -109,7 +109,7 @@ public class ItemIconProvider : IconSystem.IconProvider
             _sourceItem = null;
         }
 
-        _frameIndex = reader.Read();
+        _frameIndex = reader.ReadInt32();
         if (_frameIndex == -1) _frameIndex = null;
 
         ApplyFromItem(_sourceItem, _frameIndex);
@@ -118,7 +118,7 @@ public class ItemIconProvider : IconSystem.IconProvider
     public override void DeserializeBinaryFake(BinaryReader reader)
     {
         reader.ReadString();
-        reader.Read();
+        reader.ReadInt32();
     }
 
     public override void Draw(SpriteBatch spriteBatch, Vector2 position)

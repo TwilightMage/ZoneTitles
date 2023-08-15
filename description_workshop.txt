@@ -1,0 +1,33 @@
+﻿This mod is an addon for [url=https://steamcommunity.com/workshop/filedetails/?id=2992680615]Biome Titles[/url].
+It allows you to designate titled areas on your own!
+
+Let's say you have a castle and want to show a title when you enter that castle. With this mod you can do it!
+
+First, create Zone Designator. No resources needed, only a workbench.
+
+It will allow you to create and edit zones.
+[table]
+    [tr]
+        [th]Control[/th]
+        [th]Action[/th]
+    [/tr]
+    [tr]
+        [th]LMB[/td]
+        [td]Edit zone under cursor[/td]
+    [/tr]
+    [tr]
+        [td]LMB + LAlt[/td]
+        [td]Remove zone under cursor[/td]
+    [/tr]
+    [tr]
+        [td]RMB[/td]
+        [td]Drag to create new zone[/td]
+    [/tr]
+[/table]
+
+If you know German, Italian, French, Spanish, Simplified Chinese, Brasilian Portuguese, Polish and willing to help, don't mind to DM me in steam or in discord
+
+[url=https://discordapp.com/users/341065601625620481/]Discord[/url]
+[url=https://github.com/TwilightMage/ZoneTitles]GitHub[/url]
+
+[quote=tModLoader]Developed By Blooming Dragon[/quote]

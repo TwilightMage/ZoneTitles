@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.UI;
 using ZoneTitles.Common.UI;
@@ -25,26 +26,32 @@ public class UISystem : ModSystem
 
     public override void OnModLoad()
     {
-        ZoneSelector = new MultiZoneSelector();
-        ZoneSelectorUI = new UserInterface();
-        
-        ZoneEditor = new ZoneEditor();
-        ZoneEditor.OnCloseRequested += CloseZoneEditor;
-        ZoneEditorUI = new UserInterface();
+        if (Main.netMode != NetmodeID.Server)
+        {
+            ZoneSelector = new MultiZoneSelector();
+            ZoneSelectorUI = new UserInterface();
 
-        _layer = new LegacyGameInterfaceLayer("Zones UI", Draw, InterfaceScaleType.UI);
+            ZoneEditor = new ZoneEditor();
+            ZoneEditor.OnCloseRequested += CloseZoneEditor;
+            ZoneEditorUI = new UserInterface();
+
+            _layer = new LegacyGameInterfaceLayer("Zones UI", Draw, InterfaceScaleType.UI);
+        }
     }
 
     public override void OnModUnload()
     {
-        _layer = null;
+        if (Main.netMode != NetmodeID.Server)
+        {
+            _layer = null;
 
-        ZoneEditorUI = null;
-        ZoneEditor.OnCloseRequested -= CloseZoneEditor;
-        ZoneEditor = null;
-        
-        ZoneSelectorUI = null;
-        ZoneSelector = null;
+            ZoneEditorUI = null;
+            ZoneEditor.OnCloseRequested -= CloseZoneEditor;
+            ZoneEditor = null;
+
+            ZoneSelectorUI = null;
+            ZoneSelector = null;
+        }
     }
 
     public override void UpdateUI(GameTime gameTime)
