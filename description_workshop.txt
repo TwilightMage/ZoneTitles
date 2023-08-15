@@ -5,6 +5,8 @@ Let's say you have a castle and want to show a title when you enter that castle.
 
 First, create Zone Designator. No resources needed, only a workbench.
 
+[img]https://raw.githubusercontent.com/TwilightMage/ZoneTitles/1.4.3/RecipePicture.png[/img]
+
 It will allow you to create and edit zones.
 [table]
     [tr]
@@ -12,7 +14,7 @@ It will allow you to create and edit zones.
         [th]Action[/th]
     [/tr]
     [tr]
-        [th]LMB[/td]
+        [td]LMB[/td]
         [td]Edit zone under cursor[/td]
     [/tr]
     [tr]
