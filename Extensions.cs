@@ -29,7 +29,7 @@ public static class Extensions
 
     public static Rectangle ReadRect(this BinaryReader reader)
     {
-        return new Rectangle(reader.Read(), reader.Read(), reader.Read(), reader.Read());
+        return new Rectangle(reader.ReadInt32(), reader.ReadInt32(), reader.ReadInt32(), reader.ReadInt32());
     }
 
     public static void WriteRect(this BinaryWriter writer, Rectangle rect)
