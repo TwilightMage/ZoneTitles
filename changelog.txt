@@ -1,1 +1,1 @@
-﻿Fixed zones sync in multiplayer
+﻿Added German locale
