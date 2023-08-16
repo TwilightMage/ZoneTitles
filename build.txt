@@ -1,5 +1,5 @@
 author = Blooming Dragon
-version = 1.0.2
+version = 1.0.3
 displayName = Custom Zone Titles
 homepage = https://github.com/TwilightMage/ZoneTitles
 side = Both
