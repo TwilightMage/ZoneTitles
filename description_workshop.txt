@@ -29,12 +29,10 @@ It will allow you to create and edit zones.
 
 [b]Special thanks to:[/b]
 [list]
-    [*][b]deckenid[/b] - translating this mod to German language
+    [*][b]deckenid[/b] - translated this mod to German language
 [/list]
 
 If you know Italian, French, Spanish, Simplified Chinese, Brasilian Portuguese, Polish and willing to help, don't mind to DM me in steam or in discord
 
 [url=https://discordapp.com/users/341065601625620481/]Discord[/url]
 [url=https://github.com/TwilightMage/ZoneTitles]GitHub[/url]
-
-[quote=tModLoader]Developed By Blooming Dragon[/quote]

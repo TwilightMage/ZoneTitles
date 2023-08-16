@@ -233,7 +233,7 @@ public class UrlIconProvider : IconSystem.IconProvider
                                     }
                                 }
                             }
-                            catch (Exception e)
+                            catch (Exception)
                             {
                                 _cachedTexture = null;
                                 Error = Localize("CreateTextureFailed").Value;
@@ -247,7 +247,7 @@ public class UrlIconProvider : IconSystem.IconProvider
                     return;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 Error = Localize("GenericError").Value;
             }

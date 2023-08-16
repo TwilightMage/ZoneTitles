@@ -403,7 +403,7 @@ public class ItemIconPicker : IconPickerMenu
         _searchBar.ToggleTakingText();
     }
 
-    private async void FilterItemSet()
+    private void FilterItemSet()
     {
         var filterStart = DateTime.Now;
         _filteringFinished = false;
