@@ -177,7 +177,7 @@ public class ZonesSystem : ModSystem
 
     public override void SaveWorldData(TagCompound tag)
     {
-        if (Zones.Count != 0)
+        if (Zones is { Count: > 0 })
         {
             List<TagCompound> zonesTag = new List<TagCompound>();
             foreach (var zone in Zones)
@@ -218,6 +218,8 @@ public class ZonesSystem : ModSystem
 
     public override void NetReceive(BinaryReader reader)
     {
+        Zones.Clear();
+        
         int zoneCount = reader.ReadInt32();
 
         for (int i = 0; i < zoneCount; i++)
@@ -239,6 +241,8 @@ public class ZonesSystem : ModSystem
                 AddZoneNoSync(zone);
             }
         }
+        
+        RebuildAABB();
     }
 
     public override void NetSend(BinaryWriter writer)
