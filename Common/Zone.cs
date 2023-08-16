@@ -22,8 +22,6 @@ public class Zone
         return new Zone { Id = id, ZoneId = $"zone_{id}" };
     }
 
-    private static ulong _versionGenerator = 0;
-
     public Rectangle Rect
     {
         get => _rect;

@@ -21,10 +21,8 @@ public class IconTextButton : ControlWidget
     public float FadeFromBlack = 1f;
     private float _whiteLerp = 0.7f;
     private float _opacity = 0.7f;
-    private bool _hovered;
     private UIText _title;
     private float _contentAlignmentX;
-    private float _contentWidth;
 
     public IconTextButton(
         string title,
