@@ -91,7 +91,5 @@ Mods: {
 
 			UrlIconPicker.PasteUrl: Скачать из URL в буфере обмена
 		}
-
-		// "Keybinds.Random Buff.DisplayName": Random  Buff
 	}
 }

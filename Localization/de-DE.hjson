@@ -91,7 +91,5 @@ Mods: {
 
 			UrlIconPicker.PasteUrl: Herunterladen durch einer URL aus der Zwischenablage
 		}
-
-		// "Keybinds.Random Buff.DisplayName": Random  Buff
 	}
 }

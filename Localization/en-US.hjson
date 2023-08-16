@@ -91,7 +91,5 @@ Mods: {
 
 			UrlIconPicker.PasteUrl: Download from URL in clipboard
 		}
-
-		"Keybinds.Random Buff.DisplayName": Random  Buff
 	}
 }
