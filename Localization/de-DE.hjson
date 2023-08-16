@@ -1,0 +1,97 @@
+Mods: {
+	ZoneTitles: {
+		Configs: {
+			ClientConfig: {
+				Headers.IconsHeader: "[i:4723] Icons"
+
+				AllowURLIcons: {
+					Label: URL-Icons zulassen
+					Tooltip: ""
+				}
+
+				LimitURLIconsSize: {
+					Label: Größe der URL-Icons begrenzen
+					Tooltip: ""
+				}
+
+				URLIconSizeLimitKB: {
+					Label: Größenbeschränkung für URL-Icons (KB)
+					Tooltip: ""
+				}
+
+				ReloadAllURLIcons: Alle URL-Icons neu laden
+				DisplayName: Client-Konfiguration
+			}
+
+			WorldConfig.DisplayName: Welt-Konfiguration
+		}
+
+		Items: {
+			ZoneDesignator: {
+				DisplayName: Zonen Gestalter
+				Tooltip:
+					'''
+					Benutzte dieses Werkzeug, um Zonen zu bearbeiten!
+					Linksklick        - Zone unter dem Cursor bearbeiten
+					Linksklick + LAlt - Zone unter dem Cursor schnell löschen
+					Rechtsklick       - Ziehen, um eine neue Zone festzulegen
+					'''
+			}
+		}
+
+		UI: {
+			Editor.DragHint: Größe durch Ziehen ändern
+
+			ZonePanel: {
+				PanelTitle: Bearbeite "{0}"
+				TitleLabel: Titel:
+				SubtitleLabel: Untertitel:
+				ColorLabel: Farbe:
+				StrokeLabel: Einfärbung:
+				IconLabel: Icon:
+				PriorityLabel: Priorität:
+				Revert: Rückgängig
+				Apply: Anwenden
+			}
+
+			ColorPanel: {
+			}
+
+			IconPicker: {
+				Title: Icon-Auswahl
+				CategoryBestiary: Bestiarium
+				CategoryItem: Item
+				CategoryMisc: Sonstiges
+				CategoryWeb: URL
+				HelpBestiary: Icons aus allen Bestiarium-Filtern.
+				HelpItem:
+					'''
+					Icon eines beliebigen Items. Wenn ein Item eine Animation hat, kannst du ein bestimmtes Bild davon auswählen. Du kannst auch mit der Maus auf ein Item klicken, um es als Symbol zu verwenden.
+					Die Suche kann nach Namen und nach ID erfolgen. Für die Suche nach ID verwende das Format #123.
+					'''
+				HelpMisc: Nicht kategorisierte Icons aus den Terraria Datein, die nur ausgewählt wurden, weil sie als relevant eingestuft wurden.
+				HelpURL: (Fast) jedes Icon aus dem Internet.
+			}
+
+			ItemIconPicker: {
+				SearchBarPlaceholder: Filter:
+				FrameSelectorTitle: Bild auswählen
+			}
+
+			UrlIconProvider: {
+				Disabled: URL-Icons sind wegen der Client-Konfiguration deaktiviert
+				NotHttp: Keine http-Webquelle
+				InvalidUrl: Ungültige URL
+				TooBig: Größe überschreitet Limit in der Konfiguration
+				SizeFetchFailed: Abruf der Ressourcengröße fehlgeschlagen
+				NotImage: Kein Bild
+				CreateTextureFailed: Textur konnte nicht erstellt werden
+				GenericError: Bild konnte nicht abgerufen werden
+			}
+
+			UrlIconPicker.PasteUrl: Herunterladen durch einer URL aus der Zwischenablage
+		}
+
+		// "Keybinds.Random Buff.DisplayName": Random  Buff
+	}
+}
